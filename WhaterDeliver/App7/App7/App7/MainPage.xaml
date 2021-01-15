@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:App7"
+             x:Class="App7.MainPage">
+    <StackLayout BackgroundColor="#ddd">
+
+        <Picker x:Name="sub" 
+                SelectedIndexChanged="sub_SelectedIndexChanged" 
+                BackgroundColor="#777"
+                SelectedItem="0"/>
+
+
+        <ScrollView VerticalOptions="FillAndExpand" BackgroundColor="#ddd">
+            <StackLayout x:Name="cart" VerticalOptions="FillAndExpand">
+                <Frame BorderColor="#222" BackgroundColor="#ddd" HeightRequest="250">
+                    <Image BackgroundColor="#ddd"  x:Name="goVno" Source="shreK.jpg">
+
+                    </Image>
+                </Frame>
+                <StackLayout Orientation="Horizontal"  BackgroundColor="#777">
+                    <Editor TextChanged="amount_TextChanged" x:Name="amount" HorizontalOptions="FillAndExpand" BackgroundColor="#777" Keyboard="Numeric">
+
+                    </Editor>
+                    <Stepper x:Name="stepper" ValueChanged="stepper_ValueChanged">
+
+                    </Stepper>
+                </StackLayout>
+                <Label x:Name="description" Text="description" HorizontalOptions="Center" FontSize="18">
+
+                </Label>
+
+            </StackLayout>
+
+        </ScrollView>
+
+        <StackLayout Orientation="Horizontal" BackgroundColor="#777">
+            <Button x:Name="order" VerticalOptions="End" Text="Order" Clicked="order_Clicked" HorizontalOptions="FillAndExpand">
+
+            </Button>
+            <Button Text="Cart" Clicked="Button_Clicked">
+
+            </Button>
+        </StackLayout>
+
+
+    </StackLayout>
+
+</ContentPage>

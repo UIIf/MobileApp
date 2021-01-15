@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weather.MainPage">
+
+    <StackLayout>
+        <Picker x:Name="sub" 
+                SelectedIndexChanged="sub_SelectedIndexChanged" 
+                BackgroundColor="#777"
+                SelectedItem="0"/>
+        <StackLayout VerticalOptions= "StartAndExpand">
+            
+            <Label x:Name="date_label" HorizontalTextAlignment = "Center" Padding="5" FontSize = "30">
+            </Label>
+            <Label x:Name="weather_label" HorizontalTextAlignment = "Center" Padding="10" FontSize = "60">
+            </Label>
+            <StackLayout Padding="20" >
+                <Label x:Name="temperature_label" HorizontalTextAlignment = "Center" FontSize = "Large">
+                </Label>
+                <Label x:Name="feels_temperature_label" HorizontalTextAlignment = "Center" FontSize = "Medium">
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <Label x:Name="wind_speed_label" HorizontalTextAlignment = "Center">
+                </Label>
+                <Label x:Name="preasure_label" HorizontalTextAlignment = "Center">
+                </Label>
+            </StackLayout>
+        </StackLayout>
+        <!--<StackLayout VerticalOptions="End" BackgroundColor="AntiqueWhite">
+            
+        </StackLayout>-->
+        <Stepper x:Name="stepper" ValueChanged="stepper_ValueChanged" HorizontalOptions="CenterAndExpand">
+        </Stepper>
+        <!--<StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="AntiqueWhite">
+            <Stepper x:Name="stepper" ValueChanged="stepper_ValueChanged" HorizontalOptions="FillAndExpand" BackgroundColor="Azure">
+        </Stepper>
+        </StackLayout>-->
+    </StackLayout>
+
+</ContentPage>

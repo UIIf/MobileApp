@@ -1,0 +1,14 @@
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\bin\Debug\netstandard2.0\Weather.deps.json
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\bin\Debug\netstandard2.0\Weather.dll
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\bin\Debug\netstandard2.0\ref\Weather.dll
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\bin\Debug\netstandard2.0\Weather.pdb
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\obj\Debug\netstandard2.0\Weather.csprojAssemblyReference.cache
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\obj\Debug\netstandard2.0\App.xaml.g.cs
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\obj\Debug\netstandard2.0\Weather.AssemblyInfoInputs.cache
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\obj\Debug\netstandard2.0\Weather.AssemblyInfo.cs
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\obj\Debug\netstandard2.0\Weather.dll
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\obj\Debug\netstandard2.0\ref\Weather.dll
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\obj\Debug\netstandard2.0\Weather.pdb
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\obj\Debug\netstandard2.0\Weather.csproj.CoreCompileInputs.cache
+F:\Study\GitRepos\MobileApp\Weather\Weather\Weather\obj\Debug\netstandard2.0\XamlC.stamp

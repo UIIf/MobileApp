@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ud+wG+pfrjOkcFtdsXZmcu0AeMfgbEMIjzzDNbK4xKon2vSA+zzPyfVl7VZUipx4sjgKy0X7MQRwjtrFk8m8fA==",
+  "success": true,
+  "projectFilePath": "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather\\Weather.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sereg\\.nuget\\packages\\json.net\\1.0.23\\json.net.1.0.23.nupkg.sha512",
+    "C:\\Users\\sereg\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\sereg\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\sereg\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\sereg\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.6.0.1141\\xamarin.forms.4.6.0.1141.nupkg.sha512"
+  ],
+  "logs": []
+}

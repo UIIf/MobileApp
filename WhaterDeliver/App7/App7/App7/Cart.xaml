@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:App7"
+             mc:Ignorable="d"
+             x:Class="App7.Cart">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:Array x:Key="kkk" Type="{x:Type local:Good}">
+                <local:Good Name ="123" Count="123" PicPath="shreK.jpg" ></local:Good>
+            </x:Array>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="15" BackgroundColor="#ddd">
+            <ListView x:Name="goods_list" ItemsSource="{StaticResource Key=kkk}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid x:Name="cart">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.1*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                    <ColumnDefinition Width="0.1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" BackgroundColor="#eee" Source="{Binding PicPath}"/>
+                                <Label Grid.Column="1" VerticalOptions="Center" FontSize="Large"  Text="{Binding Name}"/>
+                                <Label Grid.Column="2" VerticalOptions="Center" FontSize="Large" Text="{Binding Count}"/>
+                                <Button Grid.Column="3" Text="x" Clicked="DeleteClicked"  CommandParameter="{Binding Name}" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button VerticalOptions="EndAndExpand" Clicked="Button_Clicked" Text="Order" BackgroundColor="#EE202A">
+
+
+            </Button>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

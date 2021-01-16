@@ -165,6 +165,7 @@ namespace App2
                                 left_arr.RemoveAt(left_arr.Count - 1);
                             }
                         }
+                        DrawMainPage();
                     }
                 };
                 frame.GestureRecognizers.Add(swipe);
@@ -202,6 +203,7 @@ namespace App2
                                 left_arr.RemoveAt(left_arr.Count - 1);
                             }
                         }
+                        DrawMainPage();
                     }
                 };
                 frame.GestureRecognizers.Add(swipe);

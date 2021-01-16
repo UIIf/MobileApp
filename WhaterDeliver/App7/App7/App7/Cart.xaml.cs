@@ -92,7 +92,6 @@ namespace App7
                 {
                     await DisplayAlert("Order", "U did it. What now?", "Ok");
                     goods.Clear();
-                    
                     await Navigation.PopAsync();
                 }
             }

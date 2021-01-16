@@ -112,7 +112,11 @@ namespace App7
 
             var cart = new Cart();
             Navigation.PushAsync(cart);
-            cart.Disappearing += (send, ev) => button.IsEnabled = true;
+            cart.Disappearing += (send, ev) =>
+            {
+                button.IsEnabled = true;
+                SetAmountText(sub.SelectedItem?.ToString());
+            };
         }
 
         private void amount_TextChanged(object sender, TextChangedEventArgs e)

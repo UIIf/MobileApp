@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Fo0DUHvZEMilQU5sipngho2UIkrlro1Z/ZLFCircJsRBcfkfB9xF+GNcz8p37tddqXQrmbsvj0x27iXkba1u/w==",
+  "dgSpecHash": "ZgvZ5h9ziZLwo8LDJvg9PSgEbhNiyK7EAc6QxhG+oB8OH0ZFMTdfwaqnjk27g2yGghdOkXBysaHpyFLMIqcEMA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sereg\\Desktop\\HW1\\App7\\App7\\App7\\App7.csproj",
+  "projectFilePath": "F:\\Study\\GitRepos\\MobileApp\\WhaterDeliver\\App7\\App7\\App7\\App7.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sereg\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\sereg\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

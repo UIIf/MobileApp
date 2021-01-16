@@ -18,6 +18,24 @@ namespace App2
         {
             InitializeComponent();
         }
+
+        private void DrawMainPage()
+        {
+            left.Children.Clear();
+            for(int i = 0; i < left_arr.Count; i++)
+            {
+                left.Children.Add(left_arr[i]);
+            }
+
+            right.Children.Clear();
+            for (int i = 0; i < right_arr.Count; i++)
+            {
+                right.Children.Add(right_arr[i]);
+            }
+        }
+
+        List<Frame> left_arr = new List<Frame>();
+        List<Frame> right_arr = new List<Frame>();
         private void Button_Clicked(object sender, EventArgs e)
         {
             EditorPage editor = new EditorPage();
@@ -38,51 +56,166 @@ namespace App2
                     EditorPage editor2 = new EditorPage(label.Text);
                     editor2.Disappearing += (a, b) =>
                     {
+                       
                         if (editor2.text == "")
                         {
-                            left.Children.Remove(frame);
-                            right.Children.Remove(frame);
+                            double lH = left.Height;
+                            double rH = right.Height;
+
+                            if (left_arr.Contains(frame))
+                            {
+                                lH -= frame.Height;
+                                left_arr.Remove(frame);
+                                while (lH + 5 < rH && right_arr[right_arr.Count - 1].Height < rH - lH)
+                                {
+                                    lH += right_arr[right_arr.Count - 1].Height;
+                                    rH -= right_arr[right_arr.Count - 1].Height;
+                                    left_arr.Add(right_arr[right_arr.Count - 1]);
+                                    right_arr.RemoveAt(right_arr.Count - 1);
+                                }
+                            }
+                            else
+                            {
+
+                                rH -= frame.Height;
+                                right_arr.Remove(frame);
+                                while (rH + 5 < lH && left_arr[left_arr.Count - 1].Height < lH - rH)
+                                {
+                                    rH += left_arr[left_arr.Count - 1].Height;
+                                    lH -= left_arr[left_arr.Count - 1].Height;
+                                    right_arr.Add(left_arr[left_arr.Count - 1]);
+                                    left_arr.RemoveAt(left_arr.Count - 1);
+                                }
+                            }
                         }
                         else
                         {
                             label.Text = editor2.text;
                         }
+
+                        //if (left_arr.Contains(frame))
+                        //{
+                        //    if (editor2.text == "")
+                        //    {
+                        //        lH -= frame.Height;
+                        //        left_arr.Remove(frame);
+                        //    }
+                        //    while (lH + 2 < rH)
+                        //    {
+                        //        lH += right_arr[right_arr.Count - 1].Height;
+                        //        rH -= right_arr[right_arr.Count - 1].Height;
+                        //        left_arr.Add(right_arr[right_arr.Count - 1]);
+                        //        right_arr.RemoveAt(right_arr.Count - 1);
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    if (editor2.text == "")
+                        //    {
+                        //        rH -= frame.Height;
+                        //        right_arr.Remove(frame);
+                        //    }
+                        //    while (rH + 2< lH)
+                        //    {
+                        //        rH += left_arr[left_arr.Count - 1].Height;
+                        //        lH -= left_arr[left_arr.Count - 1].Height;
+                        //        right_arr.Add(left_arr[left_arr.Count - 1]);
+                        //        left_arr.RemoveAt(left_arr.Count - 1);
+                        //    }
+                        //}
+                       
+                        
+                        DrawMainPage();
                     };
                     Navigation.PushAsync(editor2);
                 };
                 frame.GestureRecognizers.Add(tapGestureRecognizer);
                 SwipeGestureRecognizer swipe = new SwipeGestureRecognizer();
 
-                if (left.Height > right.Height)
+                swipe.Direction = SwipeDirection.Right;
+                swipe.Swiped += async (swipeSender, swipeEventArg) =>
                 {
-                    swipe.Direction = SwipeDirection.Right; 
-                    swipe.Swiped += async (swipeSender, swipeEventArg) =>
+                    if (await DisplayAlert("Confirm the deleting", "Are you sure?", "Yes!", "No"))
                     {
-                        if (await DisplayAlert("Confirm the deleting", "Are you sure?", "Yes!", "No"))
+                        double lH = left.Height;
+                        double rH = right.Height;
+
+                        if (left_arr.Contains(frame))
                         {
-                            left.Children.Remove(frame);
-                            right.Children.Remove(frame);
+                            lH -= frame.Height;
+                            left_arr.Remove(frame);
+                            while (lH + 5 < rH && right_arr[right_arr.Count - 1].Height < rH - lH)
+                            {
+                                lH += right_arr[right_arr.Count - 1].Height;
+                                rH -= right_arr[right_arr.Count - 1].Height;
+                                left_arr.Add(right_arr[right_arr.Count - 1]);
+                                right_arr.RemoveAt(right_arr.Count - 1);
+                            }
                         }
-                    };
-                    frame.GestureRecognizers.Add(swipe);
-                    right.Children.Add(frame);
+                        else
+                        {
+
+                            rH -= frame.Height;
+                            right_arr.Remove(frame);
+                            while (rH + 5 < lH && left_arr[left_arr.Count - 1].Height < lH - rH)
+                            {
+                                rH += left_arr[left_arr.Count - 1].Height;
+                                lH -= left_arr[left_arr.Count - 1].Height;
+                                right_arr.Add(left_arr[left_arr.Count - 1]);
+                                left_arr.RemoveAt(left_arr.Count - 1);
+                            }
+                        }
+                    }
+                };
+                frame.GestureRecognizers.Add(swipe);
+
+                swipe.Direction = SwipeDirection.Left;
+                swipe.Swiped += async (swipeSender, swipeEventArg) =>
+                {
+                    if (await DisplayAlert("Confirm the deleting", "Are you sure?", "Yes!", "No"))
+                    {
+                        double lH = left.Height;
+                        double rH = right.Height;
+
+                        if (left_arr.Contains(frame))
+                        {
+                            lH -= frame.Height;
+                            left_arr.Remove(frame);
+                            while (lH + 5 < rH && right_arr[right_arr.Count - 1].Height < rH - lH)
+                            {
+                                lH += right_arr[right_arr.Count - 1].Height;
+                                rH -= right_arr[right_arr.Count - 1].Height;
+                                left_arr.Add(right_arr[right_arr.Count - 1]);
+                                right_arr.RemoveAt(right_arr.Count - 1);
+                            }
+                        }
+                        else
+                        {
+
+                            rH -= frame.Height;
+                            right_arr.Remove(frame);
+                            while (rH + 5 < lH && left_arr[left_arr.Count - 1].Height < lH - rH)
+                            {
+                                rH += left_arr[left_arr.Count - 1].Height;
+                                lH -= left_arr[left_arr.Count - 1].Height;
+                                right_arr.Add(left_arr[left_arr.Count - 1]);
+                                left_arr.RemoveAt(left_arr.Count - 1);
+                            }
+                        }
+                    }
+                };
+                frame.GestureRecognizers.Add(swipe);
+
+                if (left.Height > right.Height)
+                {                  
+                    right_arr.Add(frame);
                 }
                 else
-                {
-                    swipe.Direction = SwipeDirection.Left;
-                    swipe.Swiped += async (swipeSender, swipeEventArg) =>
-                    {
-                        if (await DisplayAlert("Confirm the deleting", "Are you sure?", "Yes!", "No"))
-                        {
-                            left.Children.Remove(frame);
-                            right.Children.Remove(frame);
-                        }
-                    };
-                    frame.GestureRecognizers.Add(swipe);
-                    left.Children.Add(frame);
+                { 
+                    left_arr.Add(frame);
                 }
 
-
+                DrawMainPage();
             };
             Navigation.PushAsync(editor);
         }

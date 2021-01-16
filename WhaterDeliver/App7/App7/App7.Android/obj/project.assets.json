@@ -1917,11 +1917,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sereg\\Desktop\\HW1\\App7\\App7\\App7.Android\\App7.Android.csproj",
+      "projectUniqueName": "F:\\Study\\GitRepos\\MobileApp\\WhaterDeliver\\App7\\App7\\App7.Android\\App7.Android.csproj",
       "projectName": "App7.Android",
-      "projectPath": "C:\\Users\\sereg\\Desktop\\HW1\\App7\\App7\\App7.Android\\App7.Android.csproj",
+      "projectPath": "F:\\Study\\GitRepos\\MobileApp\\WhaterDeliver\\App7\\App7\\App7.Android\\App7.Android.csproj",
       "packagesPath": "C:\\Users\\sereg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sereg\\Desktop\\HW1\\App7\\App7\\App7.Android\\obj\\",
+      "outputPath": "F:\\Study\\GitRepos\\MobileApp\\WhaterDeliver\\App7\\App7\\App7.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1942,8 +1942,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\sereg\\Desktop\\HW1\\App7\\App7\\App7\\App7.csproj": {
-              "projectPath": "C:\\Users\\sereg\\Desktop\\HW1\\App7\\App7\\App7\\App7.csproj"
+            "F:\\Study\\GitRepos\\MobileApp\\WhaterDeliver\\App7\\App7\\App7\\App7.csproj": {
+              "projectPath": "F:\\Study\\GitRepos\\MobileApp\\WhaterDeliver\\App7\\App7\\App7\\App7.csproj"
             }
           }
         }

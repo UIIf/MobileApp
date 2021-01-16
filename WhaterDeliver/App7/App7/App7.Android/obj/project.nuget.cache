@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AuwgdQgaGbJMa66SeshtZSKhoAWzAsFwpL7yETiUFomhwINu2XX8XPBqz+/S928NpDSYmgHHx0sUDAuil+q7ag==",
+  "dgSpecHash": "TCotNec8DqVJPTWDLtWeTng3jDuDzNtk5JUeXBGPQClJQb9kj9/zjywN0mAlv6Z8QGcRXaJ8XGn3L+PJaSHv9A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sereg\\Desktop\\HW1\\App7\\App7\\App7.Android\\App7.Android.csproj",
+  "projectFilePath": "F:\\Study\\GitRepos\\MobileApp\\WhaterDeliver\\App7\\App7\\App7.Android\\App7.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sereg\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\sereg\\.nuget\\packages\\xamarin.android.arch.core.common\\1.1.1.1\\xamarin.android.arch.core.common.1.1.1.1.nupkg.sha512",

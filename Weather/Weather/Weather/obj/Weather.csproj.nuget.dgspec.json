@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather\\Weather.csproj": {}
+    "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather\\Weather.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather\\Weather.csproj": {
+    "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather\\Weather.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather\\Weather.csproj",
+        "projectUniqueName": "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather\\Weather.csproj",
         "projectName": "Weather",
-        "projectPath": "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather\\Weather.csproj",
+        "projectPath": "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather\\Weather.csproj",
         "packagesPath": "C:\\Users\\sereg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather\\obj\\",
+        "outputPath": "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

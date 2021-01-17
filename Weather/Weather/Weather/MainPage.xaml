@@ -4,20 +4,28 @@
              x:Class="Weather.MainPage">
 
     <StackLayout>
-        <!--<Picker x:Name="sub" 
-                SelectedIndexChanged="sub_SelectedIndexChanged" 
-                BackgroundColor="#777"
-                SelectedItem="0"/>-->
-        <Label x:Name="City" BackgroundColor="#777"  Padding="15" HorizontalTextAlignment = "Center">
+        <StackLayout Orientation="Horizontal">
+            <Editor Placeholder="Enter city"
+                    x:Name="TextEditor"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="FillAndExpand"/>
+            <Button Text="Find" Margin="15" 
+                    HeightRequest="40"
+                    Clicked="Button_Clicked"
+                    WidthRequest="60"
+                    CornerRadius="50"
+                    HorizontalOptions="End"
+                    FontSize="12"
+                    VerticalOptions="Center" />
+        </StackLayout>
 
-        </Label>
-        <StackLayout VerticalOptions= "StartAndExpand">
-            
-            <Label x:Name="date_label" HorizontalTextAlignment = "Center" Padding="5" FontSize = "30">
+        <StackLayout x:Name="Inner" VerticalOptions= "CenterAndExpand">
+
+            <!--<Label x:Name="date_label" HorizontalTextAlignment = "Center" Padding="5" FontSize = "30">
             </Label>
             <Label x:Name="weather_label" HorizontalTextAlignment = "Center" Padding="10" FontSize = "60">
             </Label>
-            <StackLayout Padding="20" VerticalOptions="End">
+            <StackLayout Padding="20">
                 <Label x:Name="temperature_label" HorizontalTextAlignment = "Center" FontSize = "Large">
                 </Label>
                 <Label x:Name="feels_temperature_label" HorizontalTextAlignment = "Center" FontSize = "Medium">
@@ -28,17 +36,25 @@
                 </Label>
                 <Label x:Name="preasure_label" HorizontalTextAlignment = "Center">
                 </Label>
-            </StackLayout>
-        </StackLayout>
-        <!--<StackLayout VerticalOptions="End" BackgroundColor="AntiqueWhite">
+            </StackLayout>-->
             
-        </StackLayout>-->
-        <Stepper x:Name="stepper" ValueChanged="stepper_ValueChanged" HorizontalOptions="CenterAndExpand">
-        </Stepper>
-        <!--<StackLayout VerticalOptions="EndAndExpand" Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="AntiqueWhite">
-            <Stepper x:Name="stepper" ValueChanged="stepper_ValueChanged" HorizontalOptions="FillAndExpand" BackgroundColor="Azure">
-        </Stepper>
-        </StackLayout>-->
+        </StackLayout>
+        <StackLayout x:Name="StepperAround" VerticalOptions="End" HorizontalOptions="FillAndExpand">
+            <Stepper x:Name="stepper" ValueChanged="stepper_ValueChanged" HorizontalOptions="Center">
+            </Stepper>
+        </StackLayout>
+        <!--<StackLayout Orientation="Horizontal">-->
+            
+            
+        <!--</StackLayout>-->
+        <Button x:Name="Btn"
+                    Text="Week" 
+                    HeightRequest="40"
+                    Clicked="ChangeDraw"
+                    WidthRequest="80"
+                    HorizontalOptions="FillAndExpand"
+                    FontSize="15"
+                    VerticalOptions="Center" />
     </StackLayout>
 
 </ContentPage>

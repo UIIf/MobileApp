@@ -1999,11 +1999,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather.Android\\Weather.Android.csproj",
+      "projectUniqueName": "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather.Android\\Weather.Android.csproj",
       "projectName": "Weather.Android",
-      "projectPath": "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather.Android\\Weather.Android.csproj",
+      "projectPath": "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather.Android\\Weather.Android.csproj",
       "packagesPath": "C:\\Users\\sereg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather.Android\\obj\\",
+      "outputPath": "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2024,8 +2024,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather\\Weather.csproj": {
-              "projectPath": "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather\\Weather.csproj"
+            "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather\\Weather.csproj": {
+              "projectPath": "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather\\Weather.csproj"
             }
           }
         }

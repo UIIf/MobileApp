@@ -73,17 +73,11 @@ namespace Weather
         public string description { get; set; }
     }
     public partial class MainPage : ContentPage
-    {
-
-        //public class MyItem
-        //{
-        //    public string Rus;
-        //    public string Eng;
-        //    public string LatLon;
-        //}
+    { 
 
         int day = 0;
         string selected_city = "";
+        bool flag = true;
 
         private void stepper_ValueChanged(object _sender, ValueChangedEventArgs _e)
         {
@@ -97,148 +91,175 @@ namespace Weather
                 day = 7;
                 (_sender as Stepper).Value = 7;
             }
-            weather_label.Text = day.ToString();
             DrawWeather();
         }
 
         private void DrawWeather()
         {
-            if(WeatherAll.Count > 0 && day > -1 && day < WeatherAll.Count)
+            Inner.Children.Clear();
+            if (flag)
             {
-                date_label.Text = (DateTime.Now.AddDays(day)).ToString("M");
-                weather_label.Text = WeatherAll[day].weather[0].description;
-                temperature_label.Text = "Temperature: = " + WeatherAll[day].temp.ToString() + " C°";
-                feels_temperature_label.Text = "But it feels like: " + WeatherAll[day].feels_like.ToString() + " C°";
-                wind_speed_label.Text = "Wind speed: " + WeatherAll[day].wind_speed.ToString() + " m/s";
-                preasure_label.Text = "Air pressure: " + WeatherAll[day].pressure.ToString();
+                if (WeatherAll.Count > 0 && day > -1 && day < WeatherAll.Count)
+                {
+                    //date_label.Text = (DateTime.Now.AddDays(day)).ToString("M");
+                    //weather_label.Text = WeatherAll[day].weather[0].description;
+                    //temperature_label.Text = "Temperature: = " + WeatherAll[day].temp.ToString() + " C°";
+                    //feels_temperature_label.Text = "But it feels like: " + WeatherAll[day].feels_like.ToString() + " C°";
+                    //wind_speed_label.Text = "Wind speed: " + WeatherAll[day].wind_speed.ToString() + " m/s";
+                    //preasure_label.Text = "Air pressure: " + WeatherAll[day].pressure.ToString();
+                    Label lbl = new Label();
+                    lbl.HorizontalTextAlignment = TextAlignment.Center;
+                    lbl.Padding = 5;
+                    lbl.FontSize = 30;
+                    lbl.Text = (DateTime.Now.AddDays(day)).ToString("M");
+                    Inner.Children.Add(lbl);
+                    Label weather = new Label();
+                    weather.HorizontalTextAlignment = TextAlignment.Center;
+                    weather.Padding = 10;
+                    weather.FontSize = 50;
+                    weather.Text = WeatherAll[day].weather[0].description;
+                    Inner.Children.Add(weather);
+                    StackLayout TemperatureStck = new StackLayout();
+                    TemperatureStck.Padding = 20;
+                    Label temper = new Label();
+                    temper.HorizontalTextAlignment = TextAlignment.Center;
+                    temper.FontSize = 25;
+                    temper.Text = "Temperature: = " + WeatherAll[day].temp.ToString() + " C°";
+                    TemperatureStck.Children.Add(temper);
+                    Label feel_like = new Label();
+                    feel_like.HorizontalTextAlignment = TextAlignment.Center;
+                    feel_like.FontSize = 25;
+                    feel_like.Text = "But it feels like: " + WeatherAll[day].feels_like.ToString() + " C°";
+                    TemperatureStck.Children.Add(feel_like);
+                    Inner.Children.Add(TemperatureStck);
+                    StackLayout OtherStck = new StackLayout();
+                    OtherStck.VerticalOptions = LayoutOptions.End;
+                    Label windSpeed = new Label();
+                    windSpeed.HorizontalTextAlignment = TextAlignment.Center;
+                    windSpeed.FontSize = 15;
+                    windSpeed.Text = "Wind speed: " + WeatherAll[day].wind_speed.ToString() + " m/s";
+                    OtherStck.Children.Add(windSpeed);
+                    Label presur = new Label();
+                    presur.HorizontalTextAlignment = TextAlignment.Center;
+                    presur.FontSize = 15;
+                    presur.Text = "Air pressure: " + WeatherAll[day].pressure.ToString();
+                    OtherStck.Children.Add(presur);
+                    Inner.Children.Add(OtherStck);
+                    //Stepper stp = new Stepper();
+                    //stp.ValueChanged += stepper_ValueChanged;
+                    //stp.Value = day;
+                    //stp.VerticalOptions = LayoutOptions.End;
+                    //stp.HorizontalOptions = LayoutOptions.Center;
+                    //Inner.Children.Add(stp);
+                }
+                else
+                {
+
+                    Label lbl = new Label();
+                    lbl.HorizontalTextAlignment = TextAlignment.Center;
+                    lbl.Padding = 10;
+                    lbl.FontSize = 60;
+                    lbl.Text = "City not choosen";
+                    Inner.Children.Add(lbl);
+                }
             }
             else
             {
-                date_label.Text = (DateTime.Now.AddDays(day)).ToString("M");
-                weather_label.Text = "City not choosen";
-                temperature_label.Text = "Temperature: = X C°";
-                feels_temperature_label.Text = "But it feels like: X C°";
-                wind_speed_label.Text = "Wind speed: X m/s";
-                preasure_label.Text = "Air pressure: X";
+                if (WeatherAll.Count > 0 && day > -1 && day < WeatherAll.Count)
+                {
+                    for(int i = 0; i < WeatherAll.Count; i++)
+                    {
+                        Label lbl = new Label();
+                        lbl.HorizontalTextAlignment = TextAlignment.Center;
+                        lbl.FontSize = 20;
+                        lbl.Text = (DateTime.Now.AddDays(i)).ToString("M");
+                        lbl.Text += " tmp:" + WeatherAll[i].temp.ToString();
+                        lbl.Text += " wind speed:" + WeatherAll[i].wind_speed.ToString();
+                        Inner.Children.Add(lbl);
+                    }
+                }
+                else
+                {
+
+                    Label lbl = new Label();
+                    lbl.HorizontalTextAlignment = TextAlignment.Center;
+                    lbl.Padding = 10;
+                    lbl.FontSize = 60;
+                    lbl.Text = "City not choosen";
+                    Inner.Children.Add(lbl);
+                }
             }
         }
-
-        //List<MyItem> CitiesList = new List<MyItem>()
-        //    {
-        //        new MyItem()
-        //        {
-        //            Rus = "Владивосток",
-        //            Eng = "Vladivostok",
-        //            LatLon = "lat=43.1056&lon=131.8735"
-        //        },
-        //        new MyItem()
-        //        {
-        //            Rus = "Москва",
-        //            Eng = "Moscow",
-        //            LatLon = "lat=55.7522&lon=37.6156"
-        //        },
-        //        new MyItem()
-        //        {
-        //            Rus = "Депутатский",
-        //            Eng = "Deputatsky",
-        //            LatLon = "lat=69.3&lon=139.9"
-        //        }
-        //    };
 
         List<WeatherDay> WeatherAll = new List<WeatherDay>() { };
         public MainPage()
         {
             InitializeComponent();
-            City.Text = "";
-            //sub.ItemsSource = CitiesList.Select(a => { return a.Eng; }).ToList();
-            //sub.SelectedIndex = 0;
             DrawWeather();
-            TapGestureRecognizer tapGestureRecognizer = new TapGestureRecognizer();
-            tapGestureRecognizer.Tapped += (tapsender, tape) =>
-            {
-                Page1 pg = new Page1();
-                pg.Disappearing += (a, b) =>
-                {
-                    if (pg.city != "" || selected_city != pg.city)
-                    {
-                        selected_city = pg.city;
-                        WeatherAll.Clear();
-                        bool flag = true;
-                        string url = "http://api.openweathermap.org/data/2.5/weather?appid=a1ad275c70c301809867deeed0b1e520&q=" + selected_city;
-                        HttpWebRequest Req = (HttpWebRequest)WebRequest.Create(url);
-                        HttpWebResponse Res = null;
-                        try
-                        {
-                            Res = (HttpWebResponse)Req.GetResponse();
-                        }
-                        catch
-                        {
-                            flag = false;
-                        }
-
-                        if (flag)
-                        {
-                            string res_str;
-
-                            using (StreamReader stream = new StreamReader(Res.GetResponseStream()))
-                            {
-                                res_str = stream.ReadToEnd();
-                            }
-                            ForCity Fc = JsonConvert.DeserializeObject<ForCity>(res_str);
-                            url = "https://api.openweathermap.org/data/2.5/onecall?exclude=minutely,hourly&units=metric&appid=a1ad275c70c301809867deeed0b1e520&lat=" + Fc.coord.lat + "&lon=" + Fc.coord.lon;
-                            Req = (HttpWebRequest)WebRequest.Create(url);
-                            Res = (HttpWebResponse)Req.GetResponse();
-                            using (StreamReader stream = new StreamReader(Res.GetResponseStream()))
-                            {
-                                res_str = stream.ReadToEnd();
-                            }
-                            RespondWeather FinResp = JsonConvert.DeserializeObject<RespondWeather>(res_str);
-                            WeatherAll.Clear();
-                            WeatherAll.Add(FinResp.current);
-                            for (int i = 0; i < FinResp.daily.Length; i++)
-                            {
-                                WeatherAll.Add(new WeatherDay(FinResp.daily[i]));
-                            }
-                            day = 0;
-                        }
-                        City.Text = selected_city;
-                        DrawWeather();
-                    }
-                };
-                
-                Navigation.PushAsync(pg);
-            };
-            City.GestureRecognizers.Add(tapGestureRecognizer);
-            City.Text = "Find";
         }
 
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            if (TextEditor.Text != "" || selected_city != TextEditor.Text)
+            {
+                selected_city = TextEditor.Text;
+                WeatherAll.Clear();
+                bool flag = true;
+                string url = "http://api.openweathermap.org/data/2.5/weather?appid=a1ad275c70c301809867deeed0b1e520&q=" + selected_city;
+                HttpWebRequest Req = (HttpWebRequest)WebRequest.Create(url);
+                HttpWebResponse Res = null;
+                try
+                {
+                    Res = (HttpWebResponse)Req.GetResponse();
+                }
+                catch
+                {
+                    flag = false;
+                }
 
-        //private void sub_SelectedIndexChanged(object _sender, EventArgs _e)
-        //{
-        //    string url = "http://api.openweathermap.org/data/2.5/forecast/daily?cnt=16&units=metric&appid=a1ad275c70c301809867deeed0b1e520&q=London"; //+ CitiesList[sub.SelectedIndex].Eng; lat=33.441792&lon=-94.037689
-        //    string url = "https://api.openweathermap.org/data/2.5/onecall?exclude=minutely,hourly&units=metric&appid=a1ad275c70c301809867deeed0b1e520&" + CitiesList[sub.SelectedIndex].LatLon;
-        //    HttpWebRequest Req = (HttpWebRequest)WebRequest.Create(url);
+                if (flag)
+                {
+                    string res_str;
 
-        //    HttpWebResponse Res = (HttpWebResponse)Req.GetResponse();
+                    using (StreamReader stream = new StreamReader(Res.GetResponseStream()))
+                    {
+                        res_str = stream.ReadToEnd();
+                    }
+                    ForCity Fc = JsonConvert.DeserializeObject<ForCity>(res_str);
+                    url = "https://api.openweathermap.org/data/2.5/onecall?exclude=minutely,hourly&units=metric&appid=a1ad275c70c301809867deeed0b1e520&lat=" + Fc.coord.lat + "&lon=" + Fc.coord.lon;
+                    Req = (HttpWebRequest)WebRequest.Create(url);
+                    Res = (HttpWebResponse)Req.GetResponse();
+                    using (StreamReader stream = new StreamReader(Res.GetResponseStream()))
+                    {
+                        res_str = stream.ReadToEnd();
+                    }
+                    RespondWeather FinResp = JsonConvert.DeserializeObject<RespondWeather>(res_str);
+                    WeatherAll.Clear();
+                    WeatherAll.Add(FinResp.current);
+                    for (int i = 0; i < FinResp.daily.Length; i++)
+                    {
+                        WeatherAll.Add(new WeatherDay(FinResp.daily[i]));
+                    }
+                    day = 0;
+                }
+                DrawWeather();
+            }
+        }
 
-        //    string res_str;
-
-        //    using (StreamReader stream = new StreamReader(Res.GetResponseStream()))
-        //    {
-        //        res_str = stream.ReadToEnd();
-        //    }
-        //    RespondWeather FinResp = JsonConvert.DeserializeObject<RespondWeather>(res_str);
-        //    WeatherAll.Clear();
-        //    WeatherAll.Add(FinResp.current);
-        //    for (int i = 0; i < FinResp.daily.Length; i++)
-        //    {
-        //        WeatherAll.Add(new WeatherDay(FinResp.daily[i]));
-        //    }
-        //    day = 0;
-        //    DrawWeather();
-        //}
-
+        private void ChangeDraw(object sender, EventArgs e)
+        {
+            if (flag)
+            {
+                Btn.Text = "Day";
+                StepperAround.IsVisible = false;
+            }
+            else
+            {
+                Btn.Text = "Week";
+                StepperAround.IsVisible = true;
+            }
+            flag = !flag;
+            DrawWeather();
+        }
     }
-    //Label
-   //StackLayout
 }

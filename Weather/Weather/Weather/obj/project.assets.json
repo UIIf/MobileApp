@@ -697,11 +697,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather\\Weather.csproj",
+      "projectUniqueName": "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather\\Weather.csproj",
       "projectName": "Weather",
-      "projectPath": "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather\\Weather.csproj",
+      "projectPath": "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather\\Weather.csproj",
       "packagesPath": "C:\\Users\\sereg\\.nuget\\packages\\",
-      "outputPath": "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather\\obj\\",
+      "outputPath": "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

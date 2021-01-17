@@ -35,7 +35,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button VerticalOptions="EndAndExpand" Clicked="Button_Clicked" Text="Order" BackgroundColor="#EE202A">
+            <Button x:Name= "OrderBtn"  VerticalOptions="EndAndExpand" Clicked="Button_Clicked" Text="Order" BackgroundColor="#EE202A">
 
 
             </Button>

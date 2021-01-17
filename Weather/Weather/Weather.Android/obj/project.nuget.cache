@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bT44kwSTuySSoTzSBKuN3b/UOuEsiyNwdaZ6Cm8nfrgXO2bNqWsM3hd4N7RI4sOih9aEjfYpwtdfgoOzPWgSRQ==",
+  "dgSpecHash": "VcLBLYrBPHa8v3uoXrEKuR/hV4OcOCtu2jNSrmhsual9aGpc8lw8955ZUFTtrVly21C4/PmMMcblJmWIdfP6SQ==",
   "success": true,
-  "projectFilePath": "F:\\Study\\GitRepos\\MobileApp\\Weather\\Weather\\Weather.Android\\Weather.Android.csproj",
+  "projectFilePath": "C:\\Users\\sereg\\Desktop\\Weather\\Weather\\Weather.Android\\Weather.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sereg\\.nuget\\packages\\json.net\\1.0.23\\json.net.1.0.23.nupkg.sha512",
     "C:\\Users\\sereg\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",

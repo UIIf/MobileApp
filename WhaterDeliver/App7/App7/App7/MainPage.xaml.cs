@@ -20,6 +20,7 @@ namespace App7
 
             sub.ItemsSource = itemsList.Select(a => { return a.Name; }).ToList();
             sub.SelectedIndex = 0;
+            order.IsEnabled = false;
         }
 
         List<MyItem> itemsList = new List<MyItem>()
@@ -62,6 +63,14 @@ namespace App7
         private void stepper_ValueChanged(object _sender, ValueChangedEventArgs _e)
         {
             amount.Text = (_sender as Stepper)?.Value.ToString();
+            if(amount.Text == "0")
+            {
+                order.IsEnabled = false;
+            }
+            else
+            {
+                order.IsEnabled = true;
+            }
         }
 
         public void SetAmountText(string smth)

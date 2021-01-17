@@ -26,7 +26,14 @@ namespace App7
             InitializeComponent();
             var buf = goods.Select((a) => { return a.Value; }).ToList();
             goods_list.ItemsSource = buf;
-
+            if(goods.Count < 1)
+            {
+                OrderBtn.IsEnabled = false;
+            }
+            else
+            {
+                OrderBtn.IsEnabled = true;
+            }
 
 
             //goods_list.ItemsSource = buf;

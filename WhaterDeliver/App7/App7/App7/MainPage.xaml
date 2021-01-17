@@ -41,7 +41,7 @@
             <Button x:Name="order" VerticalOptions="End" Text="Order" Clicked="order_Clicked" HorizontalOptions="FillAndExpand">
 
             </Button>
-            <Button Text="Cart" Clicked="Button_Clicked">
+            <Button  Text="Cart" Clicked="Button_Clicked">
 
             </Button>
         </StackLayout>

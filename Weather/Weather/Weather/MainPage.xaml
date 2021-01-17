@@ -4,23 +4,26 @@
              x:Class="Weather.MainPage">
 
     <StackLayout>
-        <Picker x:Name="sub" 
+        <!--<Picker x:Name="sub" 
                 SelectedIndexChanged="sub_SelectedIndexChanged" 
                 BackgroundColor="#777"
-                SelectedItem="0"/>
+                SelectedItem="0"/>-->
+        <Label x:Name="City" BackgroundColor="#777"  Padding="15" HorizontalTextAlignment = "Center">
+
+        </Label>
         <StackLayout VerticalOptions= "StartAndExpand">
             
             <Label x:Name="date_label" HorizontalTextAlignment = "Center" Padding="5" FontSize = "30">
             </Label>
             <Label x:Name="weather_label" HorizontalTextAlignment = "Center" Padding="10" FontSize = "60">
             </Label>
-            <StackLayout Padding="20" >
+            <StackLayout Padding="20" VerticalOptions="End">
                 <Label x:Name="temperature_label" HorizontalTextAlignment = "Center" FontSize = "Large">
                 </Label>
                 <Label x:Name="feels_temperature_label" HorizontalTextAlignment = "Center" FontSize = "Medium">
                 </Label>
-            </StackLayout>
-            <StackLayout>
+            </StackLayout >
+            <StackLayout VerticalOptions="End">
                 <Label x:Name="wind_speed_label" HorizontalTextAlignment = "Center">
                 </Label>
                 <Label x:Name="preasure_label" HorizontalTextAlignment = "Center">

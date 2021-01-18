@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Timers;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -214,12 +215,43 @@ namespace Weather
             }
         }
 
+        private System.Timers.Timer tim;
+
+        private void Refresh(Object source, ElapsedEventArgs e)
+        {
+            if(WeatherAll.Count > 0)
+            {
+                string url = "https://api.openweathermap.org/data/2.5/onecall?exclude=minutely,hourly&units=metric&appid=a1ad275c70c301809867deeed0b1e520&lat=" + lat + "&lon=" + lon;
+                HttpWebRequest Req = (HttpWebRequest)WebRequest.Create(url);
+                HttpWebResponse Res = (HttpWebResponse)Req.GetResponse();
+                string res_str;
+                using (StreamReader stream = new StreamReader(Res.GetResponseStream()))
+                {
+                    res_str = stream.ReadToEnd();
+                }
+                RespondWeather FinResp = JsonConvert.DeserializeObject<RespondWeather>(res_str);
+                WeatherAll.Clear();
+                WeatherAll.Add(FinResp.current);
+                for (int i = 0; i < FinResp.daily.Length; i++)
+                {
+                    WeatherAll.Add(new WeatherDay(FinResp.daily[i]));
+                }
+                day = 0;
+            }
+        }
+
         List<WeatherDay> WeatherAll = new List<WeatherDay>() { };
+        private double lat, lon;
         public MainPage()
         {
             InitializeComponent();
             DrawWeather();
+
+            tim = new System.Timers.Timer(300000);
+            tim.Elapsed += Refresh;
         }
+
+        
 
         private void Button_Clicked(object sender, EventArgs e)
         {
@@ -249,6 +281,8 @@ namespace Weather
                         res_str = stream.ReadToEnd();
                     }
                     ForCity Fc = JsonConvert.DeserializeObject<ForCity>(res_str);
+                    lat = Fc.coord.lat;
+                    lon = Fc.coord.lon;
                     url = "https://api.openweathermap.org/data/2.5/onecall?exclude=minutely,hourly&units=metric&appid=a1ad275c70c301809867deeed0b1e520&lat=" + Fc.coord.lat + "&lon=" + Fc.coord.lon;
                     Req = (HttpWebRequest)WebRequest.Create(url);
                     Res = (HttpWebResponse)Req.GetResponse();

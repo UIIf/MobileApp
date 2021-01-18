@@ -71,6 +71,7 @@ namespace Weather
     class Weather
     {
         public string description { get; set; }
+        public string icon { get; set; }
     }
     public partial class MainPage : ContentPage
     { 
@@ -113,10 +114,17 @@ namespace Weather
                     lbl.FontSize = 30;
                     lbl.Text = (DateTime.Now.AddDays(day)).ToString("M");
                     Inner.Children.Add(lbl);
+                    Image img = new Image();
+                    img.BackgroundColor = Color.FromHex("#ccc");
+                    img.HorizontalOptions = LayoutOptions.Center;
+                    img.Source = ImageSource.FromResource("Weather.Icons." + WeatherAll[day].weather[0].icon + ".png");
+                    img.WidthRequest = 60;
+                    img.HeightRequest = 60;
+                    Inner.Children.Add(img);
                     Label weather = new Label();
                     weather.HorizontalTextAlignment = TextAlignment.Center;
-                    weather.Padding = 10;
-                    weather.FontSize = 50;
+                    weather.Padding = 5;
+                    weather.FontSize = 40;
                     weather.Text = WeatherAll[day].weather[0].description;
                     Inner.Children.Add(weather);
                     StackLayout TemperatureStck = new StackLayout();
@@ -167,16 +175,31 @@ namespace Weather
             {
                 if (WeatherAll.Count > 0 && day > -1 && day < WeatherAll.Count)
                 {
+                    StackLayout Holedr = new StackLayout();
+                    Holedr.Padding = 5;
+                    Holedr.VerticalOptions = LayoutOptions.CenterAndExpand;
+                    Holedr.HorizontalOptions = LayoutOptions.CenterAndExpand;
                     for(int i = 0; i < WeatherAll.Count; i++)
                     {
+                        StackLayout stk = new StackLayout();
+                        stk.Orientation = StackOrientation.Horizontal;
+                        //stk.HorizontalOptions = LayoutOptions.Center;
+                        Image img = new Image();
+                        img.BackgroundColor = Color.FromHex("#ccc");
+                        img.Source = ImageSource.FromResource("Weather.Icons." + WeatherAll[i].weather[0].icon + ".png");
+                        //img.HorizontalOptions = LayoutOptions.Center;
+                        stk.Children.Add(img);
                         Label lbl = new Label();
-                        lbl.HorizontalTextAlignment = TextAlignment.Center;
-                        lbl.FontSize = 20;
+                        //lbl.HorizontalTextAlignment = TextAlignment.Center;
+                        lbl.FontSize = 17;
                         lbl.Text = (DateTime.Now.AddDays(i)).ToString("M");
-                        lbl.Text += " tmp:" + WeatherAll[i].temp.ToString();
-                        lbl.Text += " wind speed:" + WeatherAll[i].wind_speed.ToString();
-                        Inner.Children.Add(lbl);
+                        lbl.Text += " tmp:" + ((int)WeatherAll[i].temp).ToString() + "C°";
+                        lbl.Text += " wind speed:" + ((int)WeatherAll[i].wind_speed).ToString() + "m/s";
+                        stk.Children.Add(lbl);
+                        Holedr.Children.Add(stk);
+                        //Inner.Children.Add(stk);
                     }
+                    Inner.Children.Add(Holedr);
                 }
                 else
                 {

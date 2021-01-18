@@ -19,6 +19,48 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Icons\01d.png" />
+    <None Remove="Icons\01n.png" />
+    <None Remove="Icons\02d.png" />
+    <None Remove="Icons\02n.png" />
+    <None Remove="Icons\03d.png" />
+    <None Remove="Icons\03n.png" />
+    <None Remove="Icons\04d.png" />
+    <None Remove="Icons\04n.png" />
+    <None Remove="Icons\09d.png" />
+    <None Remove="Icons\09n.png" />
+    <None Remove="Icons\10d.png" />
+    <None Remove="Icons\10n.png" />
+    <None Remove="Icons\11d.png" />
+    <None Remove="Icons\11n.png" />
+    <None Remove="Icons\13d.png" />
+    <None Remove="Icons\13n.png" />
+    <None Remove="Icons\50d.png" />
+    <None Remove="Icons\50n.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\01d.png" />
+    <EmbeddedResource Include="Icons\01n.png" />
+    <EmbeddedResource Include="Icons\02d.png" />
+    <EmbeddedResource Include="Icons\02n.png" />
+    <EmbeddedResource Include="Icons\03d.png" />
+    <EmbeddedResource Include="Icons\03n.png" />
+    <EmbeddedResource Include="Icons\04d.png" />
+    <EmbeddedResource Include="Icons\04n.png" />
+    <EmbeddedResource Include="Icons\09d.png" />
+    <EmbeddedResource Include="Icons\09n.png" />
+    <EmbeddedResource Include="Icons\10d.png" />
+    <EmbeddedResource Include="Icons\10n.png" />
+    <EmbeddedResource Include="Icons\11d.png" />
+    <EmbeddedResource Include="Icons\11n.png" />
+    <EmbeddedResource Include="Icons\13d.png" />
+    <EmbeddedResource Include="Icons\13n.png" />
+    <EmbeddedResource Include="Icons\50d.png" />
+    <EmbeddedResource Include="Icons\50n.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Json.Net" Version="1.0.23" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.1141" />
